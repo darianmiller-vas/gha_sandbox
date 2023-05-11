@@ -19,6 +19,7 @@ on:
 
 jobs:
   greet:
+    if: github.event.inputs.message == 'test'
     runs-on: ubuntu-latest
 
     steps:
