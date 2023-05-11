@@ -18,10 +18,18 @@ on:
         type: environment
 
 jobs:
-  greet:
-    if: github.event.inputs.message == 'test'
+  greet-cschleiden:
+    if: github.event.inputs.name == 'cschleiden'
     runs-on: ubuntu-latest
 
     steps:
     - name: Send greeting
-      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} CSH"
+
+  greet-monalisa:
+    if: github.event.inputs.name == 'monalisa'
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send greeting
+      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} Mona"
